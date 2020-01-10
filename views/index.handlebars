@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" id="nav-logo-container" href="/"></a>
+    <img src="images/lys.gif" alt="Bootstrap" class="img-circle">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav justify-content-end">
+            {{#if client}}
+            <li class="nav-item">
+                <span class="text-primary">Logged as <b>{{client.username}}</b></span>
+                <a href="/client/{{client.id}}/info"><button type="button" class="btn btn-primary topnav-btn">Account info</button></a>
+                <a href="/"><button type="button" class="btn btn-danger topnav-btn">LOG OUT</button></a>
+            </li>
+            {{else}}
+            <li class="nav-item">
+                <button type="button" class="btn topnav-btn" id="clientLogIn">Accueil</button>
+
+            </li>
+            <li class="nav-item">
+                <button type="button" class="btn topnav-btn" id="clientLogIn">A vendre</button>
+            
+            </li>
+            <li class="nav-item">
+                <button type="button" class="btn topnav-btn" id="clientLogIn">A louer</button>
+
+                <li class="nav-item">
+                <button type="button" class="btn topnav-btn" id="clientLogIn">Estimation gratuite</button>
+            
+            </li>
+            
+            </li>
+            <li class="nav-item">
+                <button type="button" class="btn topnav-btn" id="ownerLogIn">Nos services</button>
+            </li>
+
+
+            <li class="nav-item">
+                <a href="/admin"><button type="button" class="btn topnav-btn">Contact</button></a>
+            </li>
+            {{/if}}
+        </ul>
+    </div>
+</nav>
+
+
+
+</section>
+
+<div id="clientModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            {{> modal/modal-client}}
+
+        </div>
+    </div>
+</div>
+
+<div id="ownerModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            {{> modal/modal-owner}}
+
+
+        </div>
+    </div>
+</div>
+
